@@ -53,6 +53,3 @@ L'installazione dell'applicazione comprende i seguenti passi:
 - Dopodichè digitare il comando "nodemon start"
 - Avviare il proprio browser e collegarsi al localhost nella porta impostata (default 3000)
  
-## Diagramma E-R
-Il seguente diagramma è stato realizzato per avere un modello di riferimento su cui è stata realizzata la base di dati dell'applicazione.
-![Progetto Web Programming](https://user-images.githubusercontent.com/83754920/186418974-e49ba21c-45ae-4bd0-965e-9fc5f610a467.jpg)
