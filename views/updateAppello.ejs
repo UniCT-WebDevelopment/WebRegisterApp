@@ -1,0 +1,22 @@
+<%- include ("includes/_header.ejs") %>
+<div class="container2">
+    <h1>Modifica Appello</h1>
+    <div id="cont_form">
+        <form method="POST" id="formUpdateAppello" class="updateAppello">
+            <div id="container_Appello">
+                <label for="idAppello" class="labelUpdateAppello">
+                    <span class="span">ID Appello:</span> 
+                    <input type="number" name="idAppello" id="idAppello" class="in_appello" value="<%= appello[0].idAppello %>" readonly>
+                </label>
+                <label for="nomeApello" class="labelUpdateAppello">
+                    <span class="span">Nome Appello:</span> 
+                    <input type="text" name="nomeAppello" id="nomeAppello" class="in_appello" placeholder="Inserisci nome" value="<%= appello[0].nomeAppello %>" required>
+                </label>
+                <div id="c_sbmtAppello">
+                    <input type="submit" name="submitData" id="submitData" value="Invia">
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+<%- include ("includes/_footer.ejs") %>

@@ -1,0 +1,112 @@
+<%- include ("includes/_header.ejs") %>
+<div id="containerProgettisti">
+    <h1>Progettisti</h1>
+    <!-- <div id="divFormProgetto">
+        <form id="formProgetto" enctype="multipart/form-data">
+            <div>
+                <b>Esiti (csv):</b>
+                <input type="file" name="fileProgettistiCSV" id="file1" accept=".csv" required>
+            </div>
+            <div>
+                <input type="button" name="sbmt" id="sbmtProgettistiCSV" value="Invia" onclick="sendFileProgettista()">
+            </div>
+        </form>
+    </div> -->
+    <div id="c_addProgettista">
+        <button  id="btn_addProgettista">Aggiungi Progettista</button>
+        <button id="btn_removeFormProg">-</button>
+    </div>
+    <div id="c_formAddProgettista">
+        <form method="POST" id="formAddProgettista" id="displayNone">
+            <div id="container_Progettista">
+                <label for="idAppello" class="labelUpdateEsame">
+                    <span class="span">ID Appello:</span> 
+                    <input type="text" name="idAppello" id="idAppelloForm" class="in_esame" placeholder="idAppello" required>
+                </label>
+                <label for="matricola" class="labelUpdateEsame">
+                    <span class="span">Matricola:</span> 
+                    <input type="text" name="matricola" id="matricola" class="in_esame" placeholder="Matricola" required>
+                </label>
+                <label for="voto" class="labelUpdateEsame">
+                    <span class="span">Voto:</span> 
+                    <input type="text" name="voto" id="voto" class="in_esame" placeholder="Voto (Scritto+Orale)" required>
+                </label>
+                <label for="votoProgetto" class="labelUpdateEsame">
+                    <span class="span">Voto Progetto:</span> 
+                    <input type="text" name="votoProgetto" id="votoProgetto" class="in_esame" placeholder="Voto Progetto" required>
+                </label>
+                <label for="votoFinale" class="labelUpdateEsame">
+                    <span class="span">Voto Finale:</span> 
+                    <input type="text" name="votoFinale" id="votoFinale" class="in_esame" placeholder="Voto Finale" required>
+                </label>
+                <label for="dataConsegna" class="labelUpdateEsame">
+                    <span class="span">Data Consegna:</span> 
+                    <input type="text" name="dataConsegna" id="dataConsegna" class="in_esame" placeholder="Data Consegna" required>
+                </label>
+                <label for="esito" class="labelUpdateEsame">
+                    <span class="span">Esito:</span> 
+                    <input type="text" name="esito" id="esito" class="in_esame" placeholder="Esito" required>
+                </label>
+                <label for="titoloProgetto" class="labelUpdateEsame">
+                    <span class="span">Titolo Progetto:</span> 
+                    <input type="text" name="titoloProgetto" id="titoloProgetto" class="in_esame" placeholder="Titolo Progetto" required>
+                </label>
+                <div id="c_sbmtEsame">            
+                    <input type="submit" name="submitData" id="btn_addProgettista" value="Invia">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="c_searchProgettista">
+        <div>
+            <span>Ricerca Progettista</span>
+            <div class="c_search">
+                <input type="text" id="searchProgettistaByMatricola" placeholder="Matricola">
+            </div>
+        </div>
+    </div>
+    <div id="tableProgetto_container">
+        <table id="tableProgettista">
+            <thead class="theadProgettista">
+                <tr class="trProgetto">
+                    <th>ID_Appello</th>
+                    <th>Matricola</th>
+                    <th>Voto</th>
+                    <th>Voto_Progetto</th>
+                    <th>Voto_Finale</th>
+                    <th>Data_Consegna</th>
+                    <th>Esito</th>
+                    <th>Titolo_Progett.</th>
+                    <th>Azioni</th>
+                </tr>  
+            </thead>
+            <tbody id="tbodyProgetto">
+                <%for(var i=0; i<progettisti.length; i++){ %>
+                <tr>
+                    <td><%= progettisti[i].idAppello %></td>
+                    <td><%= progettisti[i].matricola %></td>
+                    <td><%= progettisti[i].voto %></td>
+                    <td><%= progettisti[i].votoProgetto %></td>
+                    <td><%= progettisti[i].votoFinale %></td>
+                    <td><%= progettisti[i].dataConsegna %></td>
+                    <td><%= progettisti[i].esito %></td>
+                    <td><%= progettisti[i].titoloProgetto %></td>
+                    <td>
+                        <button class="btn_action edit" title="modifica">
+                            <a href="/updateProgettista?idAppello=<%=progettisti[i].idAppello%>&matricola=<%=progettisti[i].matricola%>"><box-icon name='edit-alt' type='solid' color='#FCB91C' ></box-icon></a>
+                        </button>
+                        <button class="btn_action remove" title="cancella" id="btn_remove">
+                            <a data-matricola="<%= progettisti[i].matricola %>" id="delProgettista" class="deleteProg"><box-icon name='x' color='#f7444e' ></box-icon></a>
+                        </button>
+                    </td>
+                </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
+    <div id="csvTable">
+
+    </div>
+</div>
+
+<%- include ("includes/_footer.ejs") %>

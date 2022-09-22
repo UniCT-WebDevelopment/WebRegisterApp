@@ -1,0 +1,43 @@
+<%- include("includes/_header") %>
+    <div id="container">
+        <div id="dash">
+            <h1>Dashboard</h1>
+        </div>
+        <div id="body_grid">
+
+            <div class="card">
+                <div id="g_studenti">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="details">
+                    <div id="promossi">
+                        <p>Studenti Promossi: <b id="numPromossi">0</b></p>
+                    </div>
+                    <div id="rimandati">
+                        <p>Studenti Rimandati: <b id="numRimandati">0</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card_esaminati">
+                <div id="g_esaminati">
+                    <h1 class="fontSize50">Numero di Studenti Esaminati</h1>
+                    <div class="wrapper">
+                        <p id="counterEsaminati">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="card_registrati">
+                <div id="g_registrati">
+                    <h1 class="fontSize47">Numero di Studenti Registrati</h1>
+                    <div class="wrapper">
+                        <p id="counterStudente">0</p>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+<%- include("includes/_footer") %>
+    

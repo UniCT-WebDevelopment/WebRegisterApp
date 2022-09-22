@@ -1,0 +1,8 @@
+{
+    "hostname":"localhost",
+    "port": 3306,
+    "database":"registro",
+    "user":"root",
+    "password":"",
+    "courseName": "Web Development"
+}

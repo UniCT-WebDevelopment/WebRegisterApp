@@ -1,0 +1,153 @@
+#c_studente{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  1fr;
+    margin-top: 30px;
+    row-gap: 20px;
+}
+
+h1{
+    color: #f7f8f3;
+    font-size: 60px;
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 1;
+}
+
+#c_searchStudente{
+    width: 95%;
+    display: flex;
+    justify-content: end;
+    grid-row-start: 3;
+    align-self: flex-end;
+}
+
+#c_searchStudente> div>span{
+    margin-right: 20px;
+    color: #f7f8f3;
+    font-size: 23px;
+    font-weight: 500;
+    color: #FCB91C;
+}
+
+.c_search>button{
+    border: 0px none transparent;
+    background-color: transparent;
+}
+
+.c_search>input{
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #f7f8f3;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+
+.c_search{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.c_search:hover{
+    cursor: pointer;
+}
+
+#c_tableStudente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    justify-self: center;
+    align-self: flex-start;
+    grid-row-start: 3;
+    overflow: auto;
+    border: 1px solid #f7f8f3;
+    grid-row-start: 5;
+}
+
+#thead .trStudente{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr 1.2fr 1.5fr 1fr 1fr !important;
+    grid-template-rows: auto;
+    color: #f7f8f3;
+}
+
+#tbodyStudente tr, #thead tr{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.5fr 1.2fr 1.5fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 50px;
+    font-size: 20px;
+    color: #f7f8f3;
+}
+
+#thead tr th{
+    justify-self: center;
+    align-self: center;
+}
+
+#tbodyStudente tr td{
+    justify-self: center;
+    align-self: center;
+    font-size: 16px;
+}
+
+@media (max-width: 1450px){
+    #c_tableStudente{
+        overflow-x: auto;
+    }
+
+    #tableStudenti{
+        overflow: scroll !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tbodyStudente,#thead{
+        width: 2200px;
+    }
+
+    #tbodyStudente tr{
+        column-gap: 100px;
+        align-items: center;
+        justify-self: end;
+        display: grid;
+        grid-template-columns: 200px 180px 200px 220px 200px 200px 150px 100px !important;
+        height: 70px;
+        width: 100%;    
+    }
+
+    .rowStudente .azioni{
+        display: flex;
+        flex-direction: row;
+         justify-content: center;
+    }
+
+    #rowStudente{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 150px 150px 200px 150px 200px 200px 100px 100px !important;
+        height: 70px;
+    }
+}
+
+@media (max-width: 1024px){
+    #c_studente{
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 521px){
+    #c_studente>h1{
+        text-align: center;
+    }
+}

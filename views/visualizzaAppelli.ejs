@@ -1,0 +1,46 @@
+<%- include ("includes/_header.ejs") %>
+<div class="container">
+    <div id="header">
+        <h1>Visualizza Appelli</h1>
+    </div>   
+    <div id="body_container">
+        <form action="/addAppello" method="post" id="h_container">
+            <div id="appelli">
+                <span>APPELLI PRESENTI</span>
+            </div>
+            <div></div>
+            <div id="btn_addAppello">
+                <a href="/creaAppello">Crea Appello</a>
+            </div>  
+        </form>
+        <div id="c_Appelli">
+            <table id="tab_appelli">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Appello</th>
+                        <th>Azione</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(var i=0; i<appelli.length; i++){ %>
+                    <tr class="rows">
+                        <td><%= appelli[i].idAppello %></td>
+                        <td class="nomeAppello"><a href="/appello?idAppello=<%=appelli[i].idAppello %>"><%= appelli[i].nomeAppello %></a></td>
+                        <td class="btns" title="modifica">
+                            <button class="btn_action edit" title="modifica">
+                                <a href="/updateAppello?idAppello=<%= appelli[i].idAppello %>"><box-icon name='edit-alt' type='solid' color='#fff' ></box-icon></a>
+                            </button>
+                            <button class="btn_action remove" title="cancella">
+                                <a data-id="<%= appelli[i].idAppello %>" class="delete"><box-icon name='x' color='#fff' ></box-icon></a>
+                            </button>
+                        </td>
+                        </div>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include ("includes/_footer.ejs") %>

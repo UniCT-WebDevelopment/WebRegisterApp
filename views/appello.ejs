@@ -1,0 +1,132 @@
+<%- include ("includes/_header.ejs") %>
+<div id="containerAppello">
+    <h1>Appello</h1>
+    <div id="divFormAppello">
+        <form id="formAppello" enctype="multipart/form-data">
+            <div>
+                <b>Studenti prenotati (csv): </b>
+                <input type="file" name="fileCSV" id="fileCSV" accept=".csv" required>
+            </div>
+            <!-- <div>
+                <b>Esiti (csv): </b>
+                <input type="file" name="fileCSV" id="file2" accept=".csv" required>
+            </div> -->
+            <div>
+                <input type="button" name="sbmt" id="sbmtCSV" value="Invia" onclick="sendFile()">
+            </div>
+        </form>
+    </div>
+    <div id="c_addEsame">
+        <button  id="btn_addEsame">Aggiungi Esame</button>
+        <button id="btn_removeForm">-</button>
+    </div>
+    <div id="c_searchEsame">
+        <div>
+            <span>Ricerca Esame Sostenuto</span>
+            <div class="c_search">
+                <input type="text" id="searchEsameByMatricola" placeholder="Matricola Studente">
+            </div>
+        </div>
+
+        <div>
+            <span>Formula Utilizzata</span>
+            <div>
+                <input type="text" id="formulaAppello" class="in_esame width350" placeholder="Formula">
+                <input type="button" id="sendFormula" class="in_esame" value="Invia" onclick="updateFormula()">
+            </div>
+        </div>
+    </div>
+    <div id="c_formAddEsame">
+        <form method="POST" id="formAddEsame" class="displayNone">
+            <div id="container_Esame">
+                <label for="idAppello" class="labelUpdateEsame">
+                    <span class="span">ID Appello:</span> 
+                    <input type="text" name="idAppello" id="idAppelloForm" class="in_esame" placeholder="idAppello" readonly>
+                </label>
+                <label for="matricola" class="labelUpdateEsame">
+                    <span class="span">Matricola:</span> 
+                    <input type="text" name="matricola" id="matricola" class="in_esame" placeholder="Matricola" required>
+                </label>
+                <label for="risposteEsatte" class="labelUpdateEsame">
+                    <span class="span">Risposte Date ($rispcorrette):</span> 
+                    <input type="text" name="risposteEsatte" id="risposteEsatte" class="in_esame" placeholder="Risposte Date" required>
+                </label>
+                <label for="maxDomande" class="labelUpdateEsame">
+                    <span class="span">Max Domande Esame  ($maxdomande):</span> 
+                    <input type="text" name="maxDomande" id="maxDomande" class="in_esame" placeholder="N. Domande" required>
+                </label>
+                <label for="maxVotoScritto" class="labelUpdateEsame">
+                    <span class="span">Max voto scritto ($maxvotoscritto):</span> 
+                    <input type="text" name="maxVotoScritto" id="maxVotoScritto" class="in_esame fontSize15" class="in_esame" placeholder="Max voto scritto" required>
+                </label>
+                <label for="formula" class="labelUpdateEsame">
+                    <span class="span">Formula:</span> 
+                    <input type="text" name="formula" id="formula" class="in_esame" placeholder="Formula" required>
+                </label>
+                <label for="orale" class="labelUpdateEsame">
+                    <span class="span">Orale:</span> 
+                    <input type="text" name="orale" id="orale" class="in_esame" placeholder="Voto Orale" required>
+                </label>
+                <label for="laboratorio" class="labelUpdateEsame">
+                    <span class="span">Laboratorio:</span> 
+                    <input type="text" name="laboratorio" id="laboratorio" class="in_esame" placeholder="Voto Laboratorio" required>
+                </label>
+                <label for="votoComplessivo" class="labelUpdateEsame">
+                    <span class="span">Voto Complessivo:</span> 
+                    <input type="text" name="votoComplessivo" id="votoComplessivo" class="in_esame" placeholder="Voto Complessivo">
+                </label>
+                <label for="stato" class="labelUpdateEsame">
+                    <span class="span">Stato:</span> 
+                    <input type="text" name="stato" id="stato" class="in_esame" placeholder="Stato esame" required>
+                </label>
+                <div id="c_sbmtEsame">            
+                    <input type="submit" name="submitData" id="btn_addEsame" value="Invia">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="tableAppello_container">
+        <table id="tableAppello">
+            <thead id="thead">
+                <tr class="trAppello">
+                    <th>Matricola</th>
+                    <th>Risp. Date</th>
+                    <th>Max</th>
+                    <th class="fontSize15">Max Voto Scritto</th>
+                    <th>Formula</th>
+                    <th>Orale</th>
+                    <th>Laboratorio</th>
+                    <th class="fontSize14">Voto_Complessivo</th>
+                    <th>Stato</th>
+                    <th>Azioni</th>
+                </tr>  
+            </thead>
+            <tbody id="tbodyAppello">
+                <%for(var i=0; i<esame.length; i++){ %>
+                    <tr class="rows rowAppello">
+                        <td><%= esame[i].matricola %></td>
+                        <td><%= esame[i].risposteDate %></td>
+                        <td><%= esame[i].maxRisposte %></td>
+                        <td><%= esame[i].maxVotoScritto %></td>
+                        <td><%= esame[i].formula %></td>
+                        <td><%= esame[i].orale %></td>
+                        <td><%= esame[i].laboratorio %></td>
+                        <td><%= esame[i].votoComplessivo %></td>
+                        <td><%= esame[i].stato %></td>
+                        <td class="azioni">
+                            <button class="btn_action edit" title="modifica">
+                                <a href="/updateEsame?idAppello=<%=esame[i].idAppello%>&matricola=<%=esame[i].matricola%>"><box-icon name='edit-alt' type='solid' color='#FCB91C' ></box-icon></a>
+                            </button>
+                            <button class="btn_action remove" title="cancella">
+                                <a data-id="<%= esame[i].idAppello %>" data-matricola="<%= esame[i].matricola %>" id="delEsame" class="deleteEsame"><box-icon name='x' color='#f7444e' ></box-icon></a>
+                            </button>
+                        </td>
+                        </div>
+                    </tr>
+                    <%} %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include ("includes/_footer.ejs") %>

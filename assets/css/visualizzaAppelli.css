@@ -1,0 +1,224 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /* background-image: url("../img/pacman.png");
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-size: cover; */
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px auto;
+    row-gap: 30px;
+}
+
+#header{
+    color: #f7f8f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#formAddAppello{
+    border: 1px solid #f7f8f3;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    border-radius: 5px;
+}
+
+#formAddAppello>#compile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+}
+
+#formAddAppello>#compile{
+    font-size: large;
+}
+
+#formAddAppello>#compile label input{
+    margin-left: 15px;
+    height: 30px;
+}
+
+#formAddAppello>#compile label input:active{
+    border: 0px none transparent;
+    outline: none;
+}
+
+#btn_sbmt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 30px; */
+}
+
+#btn_sbmt>input{
+    font-size: large;
+    background-color: rgba(247, 68, 78, 0.6);
+    color: #f7f8f3;
+    border: 0px none transparent;
+}
+
+#body_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px auto;
+}
+
+#header>h1{
+    font-size: 60px;
+}
+
+#h_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 75px;
+}
+
+#appelli{
+    color: #f7444e;
+    font-size: 30px;
+    height: 50px;
+    font-weight: bold;
+}
+
+#appelli>span::after{
+    content: url("../img/carnivorous-plant.png");
+}
+
+#btn_addAppello{
+    color: #f7f8f3;
+    background-color: rgba(247, 68, 78, 0.6);
+    border: 0px none transparent;
+    font-weight: bold;
+    height: 35px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn_addAppello:active, #btn_sbmt>input:active{
+    background-color: #691b1e;
+    border: 1px solid rgb(69, 13, 13);
+}
+
+#btn_addAppello>a{
+    background-color: transparent;
+    border: 0px none transparent;
+    color: #f7f8f3;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#c_Appelli{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #f7f8f3;
+    border-radius: 5px;
+    margin-top: -50px;
+}
+
+#tab_appelli{
+    width: 100%;
+    color: #f7f8f3;
+}
+
+thead{
+    background-color: #01222f;
+    height: 40px;
+}
+
+thead tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 50px;
+    font-size: 20px;
+}
+
+thead tr th{
+    justify-self: center;
+    align-self: center;
+}
+
+tbody tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    font-size: 18px;
+    height: 40px;
+}
+
+tbody tr td{
+    justify-self: center;
+    align-items: center;
+}
+
+tbody tr a{
+    color: #f7f8f3;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #f7f8f3;
+}
+
+.rows:hover{
+    transition: 0.2s ease-out;
+    background-color: #f7444d69;
+    color: #f7f8f3;
+}
+
+td button{
+    background-color: transparent;
+    border: 0px none transparent;
+}
+
+@media(max-width: 500px){
+    #header>h1{
+        text-align: center;
+    }
+}
+
+@media(max-width: 450px){
+    #h_container{
+        row-gap: 10px;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    #appelli{
+        width: 100%;
+        text-align: center;
+    }
+
+    #c_Appelli{
+        margin-top: 0px;
+    }
+}
+
+
+

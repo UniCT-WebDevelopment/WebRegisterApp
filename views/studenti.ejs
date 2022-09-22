@@ -1,0 +1,50 @@
+<%- include ("includes/_header.ejs") %>
+<div id="c_studente">
+    <h1>Studenti Registrati</h1>
+    <div id="c_searchStudente">
+        <div>
+            <span>Ricerca Studente</span>
+            <div class="c_search">
+                <input type="text" id="searchStudentByMatricola" placeholder="Matricola">
+            </div>
+        </div>
+    </div>
+    <div id="c_tableStudente">
+        <table id="tableStudenti">
+            <thead id="thead">
+                <tr class="trStudente">
+                    <th>Matricola</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Cod_Fiscale</th>
+                    <th>cod_CdsIscr</th>
+                    <th>Regolamento</th>
+                    <th>CFU</th>
+                    <th>Azioni</th>
+                </tr>  
+            </thead>
+            <tbody id="tbodyStudente">
+                <%for(var i=0; i<studente.length; i++){ %>
+                <tr class="rows rowStudente">
+                    <td><%= studente[i].Matricola %></td>
+                    <td><%= studente[i].Nome %></td>
+                    <td><%= studente[i].Cognome %></td>
+                    <td><%= studente[i].cf %></td>
+                    <td><%= studente[i].codCdsIscr %></td>
+                    <td><%= studente[i].Regolamento %></td>
+                    <td><%= studente[i].cfu %></td>
+                    <td class="azioni">
+                        <button class="btn_action edit" title="modifica">
+                            <a href="/updateStudente?matricola=<%= studente[i].Matricola %>"><box-icon name='edit-alt' type='solid' color='#FCB91C' ></box-icon></a>
+                        </button>
+                        <button class="btn_action remove" title="cancella">
+                            <a data-matricola="<%= studente[i].Matricola %>" id="delStudente" class="deleteStud"><box-icon name='x' color='#f7444e' ></box-icon></a>
+                        </button>
+                    </td>
+                    </div>
+                </tr>
+                <%} %>
+            </tbody>
+        </table>
+    </div>
+<%- include ("includes/_footer.ejs") %>

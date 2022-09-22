@@ -1,0 +1,20 @@
+<%- include ("includes/_header.ejs") %>
+<div class="container2">
+    <h1>Crea Appello</h1>
+    <div class="msgFromBackend"></div>
+    <form method="POST" id="formAddAppello">
+        <div id="compile">
+            <label for="nomeApello" class="labelCreateAppello">
+                <span>Nome Appello:</span> 
+                <input type="text" name="nomeAppello" id="nomeAppello" placeholder="Inserisci nome" required>
+            </label>
+            <div id="btn_sbmt">
+                <input type="submit" name="submitData" id="submitData" value="Invia">
+            </div>
+        </div>
+    </form>
+</div>
+<%- include ("includes/_footer.ejs") %>
+
+
+<!-- action="/api/creaAppello" -->

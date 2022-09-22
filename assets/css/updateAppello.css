@@ -1,0 +1,85 @@
+#formUpdateAppello{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 400px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 4px 4px #fcb91c8c;
+}
+
+#container_Appello{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;  
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+}
+
+
+.labelUpdateAppello{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    color: white;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.span{
+    grid-column-start: 1;
+    justify-self: center;
+    align-self: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #FCB91C;
+}
+
+.in_appello{
+    height: 40px;
+    border-radius: 5px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#c_sbmtAppello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+@media (max-width: 1200px){
+    #formUpdateAppello{
+        width: 70%;
+    }
+
+    #container_Appello{
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 680px){
+    .labelUpdateAppello{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #idAppello,#nomeAppello{
+        width: 70%;
+    }
+}
+
+@media (max-width: 490px){
+    .container2>h1{
+        margin-top: 80px;
+        width: 100%;
+        text-align: center;
+    }
+}

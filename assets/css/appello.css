@@ -1,0 +1,283 @@
+#containerAppello{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.2fr auto auto auto;
+    row-gap: 30px;
+    margin-top: 70px;
+}
+
+h1{
+    color: #f7f8f3;
+    font-size: 60px;
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 1;
+}
+
+#divFormAppello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-row-start: 2;
+}
+
+#formAppello{
+    border: 2px solid #f7f8f3;
+    padding: 30px;
+    border-radius: 10px;
+    color: #f7f8f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formAppello div{
+    padding-top: 30px;
+}
+
+#formAppello>div b{
+    margin-right: 20px;
+    font-size: large;
+    color: #FCB91C;
+}
+
+#formAppello :last-child input{
+    background-color: transparent;
+    border: 2px solid #FCB91C;
+    padding: 10px;
+    color: #f7f8f3;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#c_addEsame{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    grid-row-start: 3;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#btn_addEsame{
+    background-color: #FCB91C;
+    padding: 10px;
+    font-weight: 400;
+    font-size: large;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+#tableAppello_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    justify-self: center;
+    align-self: flex-start;
+    overflow: auto;
+    border: 1px solid #f7f8f3;
+    grid-row-start: 6;
+}
+
+table{
+    width: 100%;
+}
+
+#thead .trAppello{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2.5fr 1fr 1fr 1fr 1fr 1fr !important;
+    grid-template-rows: auto;
+    color: #f7f8f3;
+}
+
+#tbodyAppello tr, #thead tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2.5fr 1fr 1fr 1fr 1fr 1fr !important;
+    grid-template-rows: auto;
+    height: 50px;
+    font-size: 20px;
+    color: #f7f8f3;
+}
+
+#thead tr th{
+    justify-self: center;
+    align-self: center;
+}
+
+#tbodyAppello tr td{
+    justify-self: center;
+    align-self: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+
+#formAddEsame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 700px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 4px 4px #fcb91c8c;
+}
+
+#c_formAddEsame{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 4;
+    grid-column-start: 1;
+    display: none;
+}
+
+#btn_removeForm{
+    background-color: #f7444e;
+    color: white;
+    width: 100px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: xx-large;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    display: none;
+}
+
+.fontSize15{
+    font-size: 15px;
+}
+
+.fontSize14{
+    font-size: 14px;
+}
+
+#c_searchEsame{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    grid-row-start: 5;
+    justify-self: center;
+
+}
+
+#c_searchEsame> div>span{
+    margin-right: 20px;
+    color: #f7f8f3;
+    font-size: 23px;
+    font-weight: 500;
+    color: #FCB91C;
+}
+
+.c_search:hover{
+    cursor: pointer;
+}
+
+.width350{
+    width: 350px;
+}
+
+/* ---- MEDIA QUERY ----*/
+@media(max-width:1700px){
+    #formAddEsame{
+        width: 70%;
+    }
+}
+@media(max-width:1550px){
+    #tableAppello_container{
+        overflow-x: auto;
+    }
+
+    #tableAppello{
+        overflow: scroll !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #thead{
+        height: auto;
+        width: 2200px;
+    }
+
+    #tbodyAppello tr{
+        column-gap: 0px;
+    }
+
+    .rowAppello .azioni{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trAppello{
+        column-gap: 20px;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 150px 200px 150px 200px 200px 100px 200px 200px 100px 200px !important;
+        height: 70px;
+        width: 100%;
+    }
+
+    .rowAppello{
+        display: grid;
+        grid-template-columns: 200px 200px 170px 200px 250px 100px 200px 300px 40px 200px !important;
+    }
+
+    #tbodyAppello{
+        width: 2200px;
+    }
+}
+
+@media(max-width: 1330px){
+    #formAddEsame{
+        text-align: center;
+        height: 100%;
+
+    }
+    #c_formAddEsame{
+        height: 800px;
+    }
+}
+
+@media(max-width: 800px){
+    #c_searchEsame{
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+}
+
+
+/* ---- MEDIA QUERY ----*/
+@media(max-width: 650px){
+
+    #c_formAddEsame{
+        height: 1224px;
+    }
+
+    #formAddEsame{
+        height: 100%;
+    }
+
+    .labelUpdateEsame{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #formAppello div{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        justify-content: center;
+        align-items: center;
+    }
+}

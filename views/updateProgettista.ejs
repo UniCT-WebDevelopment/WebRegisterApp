@@ -1,0 +1,46 @@
+<%- include ("includes/_header.ejs") %>
+<div class="container2">
+    <h1>Modifica Progettista</h1>
+    <div id="cont_form">
+        <form method="POST" id="formUpdateProgettista" class="updateProgettista">
+            <div id="container_Esame">
+                <label for="nomeEsame" class="labelUpdateEsame">
+                    <span class="span">ID Appello:</span> 
+                    <input type="text" name="idAppello" id="idAppello" class="in_esame" value="<%=progettista[0].idAppello%>" required>
+                </label>
+                <label for="matricola" class="labelUpdateEsame">
+                    <span class="span">Matricola:</span> 
+                    <input type="text" name="matricola" id="matricola" class="in_esame"  placeholder="Matricola" value="<%=progettista[0].matricola%>" required>
+                </label>
+                <label for="voto" class="labelUpdateEsame">
+                    <span class="span">Voto:</span> 
+                    <input type="text" name="voto" id="voto" class="in_esame"  placeholder="Voto" value="<%=progettista[0].voto%>" required>
+                </label>
+                <label for="votoProgetto" class="labelUpdateEsame">
+                    <span class="span">Voto Progetto</span> 
+                    <input type="text" name="votoProgetto" id="votoProgetto" class="in_esame" placeholder="Voto Progetto" value="<%=progettista[0].votoProgetto%>" required>
+                </label>
+                <label for="votoFinale" class="labelUpdateEsame">
+                    <span class="span">Voto Finale</span> 
+                    <input type="text" name="votoFinale" id="votoFinale" class="in_esame" placeholder="Voto Finale" value="<%=progettista[0].votoFinale%>" required>
+                </label>
+                <label for="dataConsegna" class="labelUpdateEsame">
+                    <span class="span">Data Consegna:</span> 
+                    <input type="text" name="dataConsegna" id="dataConsegna" class="in_esame" placeholder="Data Consegna" value="<%=progettista[0].dataConsegna%>" required>
+                </label>
+                <label for="esito" class="labelUpdateEsame">
+                    <span class="span">Esito</span> 
+                    <input type="text" name="esito" id="esito" class="in_esame" placeholder="Esito" value="<%=progettista[0].esito%>" required>
+                </label>
+                <label for="titoloProgetto" class="labelUpdateEsame">
+                    <span class="span">Titolo Progetto</span> 
+                    <input type="text" name="titoloProgetto" id="titoloProgetto" class="in_esame" placeholder="Titolo Progetto" value="<%=progettista[0].titoloProgetto%>" required>
+                </label>
+                <div id="c_sbmtEsame">            
+                    <input type="submit" name="submitData" id="submitData" value="Invia">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ("includes/_footer.ejs") %>

@@ -1,0 +1,54 @@
+<%- include ("includes/_header.ejs") %>
+<div class="container2">
+    <h1>Modifica Esame</h1>
+    <div id="cont_form">
+        <form method="POST" id="formUpdateEsame" class="updateEsame">
+            <div id="container_Esame">
+                <label for="nomeEsame" class="labelUpdateEsame">
+                    <span class="span">ID Appello:</span> 
+                    <input type="number" name="idAppello" id="idAppello" class="in_esame" value="<%=esame[0].idAppello%>" readonly>
+                </label>
+                <label for="matricola" class="labelUpdateEsame">
+                    <span class="span">Matricola:</span> 
+                    <input type="text" name="matricola" id="matricola" class="in_esame" value="<%=esame[0].matricola%>" placeholder="Matricola" required>
+                </label>
+                <label for="risposteEsatte" class="labelUpdateEsame">
+                    <span class="span">Risposte Corrette ($rispcorrette):</span> 
+                    <input type="text" name="risposteEsatte" id="votoScritto" class="in_esame" value="<%=esame[0].risposteDate%>" placeholder="Voto esame scritto" required>
+                </label>
+                <label for="maxDomande" class="labelUpdateEsame">
+                    <span class="span">Max Domande Esame ($maxdomande):</span> 
+                    <input type="text" name="maxDomande" id="maxDomande" class="in_esame" value="<%=esame[0].maxRisposte%>" placeholder="Domande presenti" required>
+                </label>
+                <label for="maxVotoScritto" class="labelUpdateEsame">
+                    <span class="span">Max voto scritto ($maxvotoscritto):</span> 
+                    <input type="text" name="maxVotoScritto" id="maxVotoScritto" class="in_esame" value="<%=esame[0].maxVotoScritto%>" placeholder="Max voto scritto" required>
+                </label>
+                <label for="formula" class="labelUpdateEsame">
+                    <span class="span">Formula:</span> 
+                    <input type="text" name="formula" id="formula" class="in_esame" value="<%= esame[0].formula %>" placeholder="Math.round((exp1)/(exp2))" required>
+                </label>
+                <label for="orale" class="labelUpdateEsame">
+                    <span class="span">Orale:</span> 
+                    <input type="text" name="orale" id="orale" class="in_esame" value="<%=esame[0].orale%>" placeholder="Voto Orale" required>
+                </label>
+                <label for="laboratorio" class="labelUpdateEsame">
+                    <span class="span">Laboratorio:</span> 
+                    <input type="text" name="laboratorio" id="laboratorio" class="in_esame" value="<%=esame[0].laboratorio%>" placeholder="Voto Laboratorio" required>
+                </label>
+                <label for="votoComplessivo" class="labelUpdateEsame">
+                    <span class="span">Voto Complessivo:</span> 
+                    <input type="text" name="votoComplessivo" id="votoComplessivo" class="in_esame" value="<%=esame[0].votoComplessivo%>" placeholder="Voto Complessivo" required>
+                </label>
+                <label for="stato" class="labelUpdateEsame">
+                    <span class="span">Stato:</span> 
+                    <input type="text" name="stato" id="stato" class="in_esame" value="<%=esame[0].stato%>" placeholder="Stato esame" required>
+                </label>
+                <div id="c_sbmtEsame">            
+                    <input type="submit" name="submitData" id="submitData" value="Invia">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ("includes/_footer.ejs") %>

@@ -1,0 +1,80 @@
+.container2{
+    height: 1100px;
+}
+
+#cont_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+#formUpdateEsame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:  50%;
+    height: 700px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 4px 4px #fcb91c8c;
+}
+
+#container_Esame{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;  
+    flex-direction: column;
+    width: 90%;
+    height: 700px;
+}
+
+.labelUpdateEsame{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    color: white;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.span{
+    grid-column-start: 1;
+    justify-self: center;
+    align-self: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FCB91C;
+}
+
+.in_esame{
+    height: 40px;
+    border-radius: 5px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#c_sbmtEsame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#submitData{
+    background-color: #fcb91cd2;
+    color: black;
+    font-size: large;
+    padding: 7px;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#submitData:hover{
+    background-color: #ffd04dd0;
+}
+

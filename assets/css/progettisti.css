@@ -1,0 +1,197 @@
+/*
+    Alcuni stili sono definiti nel file appello.css perchè hanno selettori in comune
+*/
+
+#containerProgettisti{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.2fr auto auto 1fr;
+    row-gap: 30px;
+    margin-top: 100px;
+}
+
+#divFormProgetto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-row-start: 2;
+}
+
+#formProgetto{
+    border: 2px solid #f7f8f3;
+    padding: 30px;
+    border-radius: 10px;
+    color: #f7f8f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formProgetto div{
+    padding-top: 30px;
+}
+
+#formProgetto>div b{
+    margin-right: 20px;
+    font-size: large;
+    color: #FCB91C;
+}
+
+#formProgetto :last-child input{
+    background-color: transparent;
+    border: 2px solid #FCB91C;
+    padding: 10px;
+    color: #f7f8f3;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#c_addProgettista{
+    width: 95%;
+    display: flex;
+    justify-content: end;
+    grid-row-start: 3;
+    align-self: flex-end;
+}
+
+#btn_removeFormProg{
+    background-color: #f7444e;
+    color: white;
+    width: 100px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: xx-large;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    display: none;
+}
+
+#btn_addProgettista{
+    background-color: #FCB91C;
+    padding: 10px;
+    font-weight: 400;
+    font-size: large;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+#c_formAddProgettista{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 4;
+    grid-column-start: 1;
+    display: none;
+}
+
+#tableProgetto_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    justify-self: center;
+    align-self: flex-start;
+    overflow: auto;
+    border: 1px solid #f7f8f3;
+    grid-row-start: 6;
+}
+
+.theadProgettista .trProgetto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr !important;
+    grid-template-rows: auto;
+    color: #f7f8f3;
+}
+
+#tbodyProgetto tr, .theadProgettista tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    height: 50px;
+    font-size: 16px;
+    color: #f7f8f3;
+    align-items: center;
+}
+
+#tbodyProgetto tr:hover{
+    background-color: #f7444d76;
+}
+
+#formAddProgettista,#formUpdateProgettista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 700px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 4px 4px #fcb91c8c;
+}
+
+#c_searchProgettista{
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    grid-row-start: 5;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#c_searchProgettista> div>span{
+    margin-right: 20px;
+    color: #f7f8f3;
+    font-size: 23px;
+    font-weight: 500;
+    color: #FCB91C;
+}
+
+
+@media (max-width: 1125px){
+    #c_formAddProgettista{
+        height: 600px;
+    }
+
+    #formAddProgettista{
+        width: 70%;
+        height: 100%;
+    }
+
+    #tableProgettista{
+        overflow: scroll !important;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .trProgetto{
+        width: 1500px;
+    }
+}
+
+@media (max-width: 650px){
+    #c_formAddProgettista{
+        height: 800px;
+    }
+
+    #formAddProgettista{
+        width: 90%;
+        height: 100%;
+    }
+
+    #container_Progettisti{
+        row-gap: 15px;
+    }
+}
+
+@media (max-width: 610px){
+    #c_formAddProgettista{
+        height: 900px;
+    }
+
+    #container_Progettisti{
+        row-gap: 0px;
+    }
+
+}
